@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+<title>Diamond</title>
+<script src="https://kit.fontawesome.com/f6816dd194.js" crossorigin="anonymous"></script>
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+<body>
+<!-- Project -->
+    <div class="main center">
+
+        <div class="box center">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+            <img src="profile.jpg" alt="Diamond">
+            <div>
+              <br><p class="user_name">Hi,welcome</p>
+                <p class="skill">This is my website</p>
+            </div><blink>
+            <div class="arr_container center ">
+                <i class="fas fa-arrow-right"></i>
+            </div></blink>
+            <div class="left_container off">
+                <p><h1>To get</h1>&nbsp; more information</p>
+            &nbsp; &nbsp;
+  <div class="buttons">
+    <a href="Contact loading.html"> <button class="btn-hover color-1">CLICK HERE</button></a>
+  </div>
+<!--<div class="container">
+        <a href="#" id="btn1">CLICK</a>
+        <a href="#" id="btn2" style="animation-delay:0.07s">Here</a>
+             </div>
+            >
+  <!--          <div class="skills">
+                    <div>Html</div>
+                    <div>Css</div>
+                    <div>React</div>
+                    <div>Node Js</div>
+                </div>
+          -->
+    <!--          <div class="icons">
+                    <i class="fab fa-github"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook"></i>
+                </div>
+        -->        
+                <div class="cancel center">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Custom js-->
+  <script>
+        const clc = document.querySelector(".cancel");
+
+        const arr = document.querySelector(".arr_container");
+        const left_container = document.querySelector(".left_container");
+
+        arr.addEventListener("click", ()=>{
+            arr.classList.add("active_arr");
+            if(left_container.classList.contains("off")){
+                left_container.classList.remove("off");
+                left_container.classList.add("active");
+            }
+        });
+        clc.addEventListener("click", ()=>{
+            arr.classList.remove("active_arr");
+            if(left_container.classList.contains("active")){
+                left_container.classList.remove("active");
+                left_container.classList.add("off");
+            }
+        });
+  </script>
+<!-- Custom Styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main{
+  height: 100vh;
+}
+.box{
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.288);
+  border-radius: 23px;
+  flex-direction: column;
+  color: skyblue;
+  position: relative;
+  overflow: hidden;
+} 
+.box img{
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+}
+span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+span:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #50dfdb;
+  animation: animate 1s linear infinite;
+}
+span:nth-child(1){
+  transform: rotate(0deg);
+}
+span:nth-child(2){
+transform: rotate(90deg);
+}
+span:nth-child(3){
+transform: rotate(180deg);
+}
+span:nth-child(4){
+transform: rotate(270deg);
+}
+@keyframes animate{
+  0%{
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50%{
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1%{
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100%{
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+box:hover span:before{
+  animation-play-state: paused;
+}
+box:hover {
+  box-shadow: 0px 0px 10px #0fd8d8;
+  border-radius: 30px;
+}
+.user_name{
+  margin-bottom: 5px;
+  font-size: 2rem;
+}
+/* arrow */
+.arr_container, .cancel{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: white;
+  bottom: 0;
+  right: 0;
+  border-radius: 23px 0 23px 0;
+  color: rgb(70, 70, 70);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all .4s;
+}
+.arr_container i{
+  transform: rotate(45deg);
+}
+.active_arr{
+  transform: translate(80%, 80%);
+}
+.left_container{
+  position: absolute;
+  background: #0f2027;
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
+  padding: 40px 0 0 20px;
+  transition: all .4s;
+}
+.off{
+  transform: translate(-80%, -80%) rotate(90deg);
+}
+.active{
+  transform: translate(0) rotate(0);
+}
+.left_container p{
+  margin-bottom: 15px;
+  font-size: 1.2rem; 
+}
+.left_container .skills div{
+  display: inline-block;
+  color: rgb(155, 155, 155);
+  border: 1px solid rgb(155, 155, 155);
+  padding: 5px 10px;
+  font-size: .9rem;
+  margin: 4px 4px 4px 0;
+}
+.left_container .icons{
+  font-size: 1.6rem;
+  margin-top: 10px;
+}
+.left_container .icons i{
+  color: #cfcfcf;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all .4s;
+}
+.left_container .icons i:hover{
+  color: #2c5364;
+}
+
+/*--Button--*/ 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.buttons {
+    margin-left: -9%;
+    margin-top: -9%;
+    text-align: center;
+   
+   
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 200% 100%;
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+
+  </style>
+</body>
+</html>
